@@ -125,7 +125,6 @@ if exists_check.nrows() == 0:
     # Check for a valid response, if not return no rows
     # You could instead through an exception here (https://www.postgresql.org/docs/10/plpython-util.html)
     if response.status_code >= 400:
-        raise plpy.Error('REST API request no work')
         return []
     # Grab the JSON from the response (if your API is returning plain-text or XML, use response.text)
     rest_json = response.json()
